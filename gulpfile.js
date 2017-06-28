@@ -3,16 +3,24 @@ const pug = require("gulp-pug")
 const stylus = require('gulp-stylus')
 const connect = require('gulp-connect')
 const autoprefixer = require('gulp-autoprefixer');
-const rm = n => new Promise(r => rimraf(n, r))
-const pkg = n => new Promise(r => packager(n, r))
 
 gulp.task('build', function() {
   gulp.src([
-    'node_modules/jquery/dist/jquery.js',
+    'node_modules/jquery/dist/jquery.min.js',
+    'node_modules/flatpickr/dist/flatpickr.min.js',
+    'node_modules/flatpickr/dist/flatpickr.min.css',
   ]).pipe(gulp.dest('dist/lib'))
 
+  gulp.src([
+    'node_modules/flatpickr/dist/l10n/zh.js'
+  ]).pipe(gulp.dest('dist/lib/l10n'))
+
+  gulp.src([
+    'node_modules/flatpickr/dist/themes/airbnb.css'
+  ]).pipe(gulp.dest('dist/lib/themes'))
+
   gulp.src('src/html/*.pug')
-    .pipe(pug())
+    .pipe(pug({pretty: true}))
     .pipe(gulp.dest('dist'))
     .pipe(connect.reload())
 
@@ -33,6 +41,14 @@ gulp.task('build', function() {
     .pipe(gulp.dest('dist/script'))
     .pipe(connect.reload())
 
+})
+
+gulp.task('connect', function() {
+  connect.server({
+    root: 'dist',
+    port: 2063,
+    livereload: true
+  })
 })
 
 gulp.task('watch', function(){

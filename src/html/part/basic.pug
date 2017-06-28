@@ -1,0 +1,58 @@
+block vars
+doctype html
+html(lang="zh")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    title 保密情报信息管理平台 | #{title}
+    link(rel="stylesheet", href="lib/flatpickr.min.css")
+    link(rel="stylesheet", href="lib/themes/airbnb.css")
+    link(rel="stylesheet", href="style/basic.css")
+    block style
+  body
+    .m-head
+      .logo
+        img(src="image/basic-head-logo.png", draggable="false")
+      .search
+        .m-dropdown.select
+          button
+            img.ico(src="image/basic-drop-arrow.png")
+            .text 情报库
+          .list
+            .item 情报库
+            .item 全网
+        input(type="text", placeholder="请输入情报内容...")
+        .searchbtn
+      .user
+        .welcome 欢迎登陆，
+        .m-dropdown.menu
+          button
+            .text 情报分析员
+            img.ico(src="image/basic-drop-arrow-o.png")
+          .list
+            .item(onmousedown="location.href='登录.html'") 退出登录
+    .m-lnav
+      .item(class={active: title == '情报管理'}, onclick="location.href='index.html'")
+        .icon.qbgl
+        .text 情报管理
+      .item
+        .icon.qbk
+        .text 情报库
+      .item
+        .icon.qbsp
+        .text 情报审批
+      .item
+        .icon.bgtj
+        .text 报告提交
+      .item(class={active: title == '大屏管理'}, onclick="location.href='大屏管理-情报展示.html'")
+        .icon.dpgl
+        .text 大屏管理
+    .m-cont
+      block content
+    block tpl
+    script(src="lib/jquery.min.js")
+    script(src="lib/flatpickr.min.js")
+    script(src="lib/l10n/zh.js")
+    script(src="script/basic.js")
+    block script

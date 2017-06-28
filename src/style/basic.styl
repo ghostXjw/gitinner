@@ -1,3 +1,154 @@
 body
   margin 0
   font-family 'Microsoft Yahei', sans-serif
+  background #f1f4f9
+
+.m-dropdown
+  position relative
+  >.list
+    display none
+    line-height 40px
+    color #5d6267
+    padding 16px 0
+    text-align center
+    position absolute
+    background white
+    font-size 12px
+    top 60px
+    left 0
+    right 0
+    box-shadow 0 8px 14px rgba(0,0,0,.08)
+    border-radius 4px
+    >.item
+      cursor pointer
+      &.active
+      &:hover
+        color #4188d8
+  >button
+    border 0
+    background transparent
+    width 100%
+    height 100%
+    outline none
+    cursor pointer
+    text-align center
+    font-size 0
+    >.ico
+    >.text
+      display inline-block
+      font-size 12px
+  >button:focus + .list
+    display block
+
+.m-head
+  height 79px
+  background url(../image/basic-head-bg.png) no-repeat
+  background-size cover
+  background-position center
+  padding 0 calc(50% - 639px)
+  margin-bottom 20px
+  display table
+  table-layout fixed
+  box-sizing border-box
+  width 100%
+  >div
+    display table-cell
+    vertical-align top
+  >.logo
+    padding-top 16px
+  >.search
+    width 280px
+    font-size 0
+    padding-top 23px
+    >.select
+      width 87px
+      height 34px
+      background #f8fafc
+      display inline-block
+      vertical-align top
+      border-top-left-radius 4px
+      border-bottom-left-radius 4px
+      >button>.ico
+        margin-right 10px
+      >.list
+        top 39px
+    [type=text]
+      border 0
+      height 34px
+      display inline-block
+      width 155px
+      box-sizing border-box
+      outline none
+      padding 0
+      vertical-align top
+      border-left 1px solid #e5e7e8
+      padding-left 10px
+      &::-webkit-input-placeholder
+        font-size 12px
+        color #b9bec1
+    .searchbtn
+      height 34px
+      width 38px
+      background white url(../image/basic-head-search.png) no-repeat
+      background-position center
+      display inline-block
+      cursor pointer
+      border-top-right-radius 4px
+      border-bottom-right-radius 4px
+  >.user
+    width 245px
+    font-size 0
+    color white
+    text-align right
+    padding-top 28px
+    >.welcome
+      display inline-block
+      font-size 14px
+    >.menu
+      display inline-block
+      >button
+        >.text
+          color white
+          font-size 14px
+          margin-right 10px
+        >.ico
+          vertical-align 2px
+      >.list
+        top 26px
+
+.m-lnav
+  width 211px
+  padding-top 18px
+  box-shadow 0 1px 3px rgba(0,0,0,.1)
+  background white
+  height 690px
+  position absolute
+  left calc(50% - 639px)
+  margin-bottom 20px
+  >.item
+    height 57px
+    margin-bottom 15px
+    border-left 4px solid transparent
+    padding-left 44px
+    color #2c2f32
+    font-size 14px
+    padding-top 20px
+    box-sizing border-box
+    cursor pointer
+    &.active
+      background #5cc86a
+      color white
+      border-left-color #1caf2f
+    >.icon
+      width 16px
+      height 16px
+      margin-right 10px
+      float left
+    for s in qbgl qbk qbsp bgtj dpgl
+      >.icon.{s}
+        background 'url(../image/basic-lnav-%s.png)' % s
+        ^[-1].active ^[-1..-1]
+          background 'url(../image/basic-lnav-%s-o.png)' % s
+    >.text
+      float left
+      line-height 16px
