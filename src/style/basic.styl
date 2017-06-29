@@ -3,6 +3,15 @@ body
   font-family 'Microsoft Yahei', sans-serif
   background #f1f4f9
 
+.flatpickr-confirm
+  outline none
+  background rgb(79, 153, 255)
+  color white
+  border-bottom-left-radius 5px
+  border-bottom-right-radius 5px
+  path
+    fill white!important
+
 .m-dropdown
   position relative
   >.list
@@ -19,6 +28,7 @@ body
     right 0
     box-shadow 0 8px 14px rgba(0,0,0,.08)
     border-radius 4px
+    z-index 100
     >.item
       cursor pointer
       &.active
@@ -152,3 +162,145 @@ body
     >.text
       float left
       line-height 16px
+
+.m-cont
+  position absolute
+  width 1048px
+  right calc(50% - 639px)
+
+.m-subnav
+  background white
+  box-shadow 0 1px 3px rgba(0,0,0,.1)
+  margin-bottom 10px
+  height 42px
+  padding-left 35px
+  font-size 0
+  >.item
+    padding 0 7px
+    line-height 42px
+    height 40px
+    color #696969
+    font-size 14px
+    display inline-block
+    cursor pointer
+    margin-right 32px
+    text-decoration none
+    &.active
+    &:hover
+      border-bottom 2px solid #4188d8
+      color #4188d8
+
+.m-subcont
+  background white
+  box-shadow 0 1px 3px rgba(0,0,0,.1)
+  color #696969
+  font-size 12px
+  margin-bottom 41px
+  >.dir
+    height 50px
+    line-height 50px
+    border-bottom 1px solid #c9cfd5
+    padding-left 42px
+    margin-bottom 18px
+
+.m-cb
+  display inline-block
+  cursor pointer
+  font-size 0
+  user-select none
+  >input
+    display none
+  >div
+    font-size 12px
+    display inline-block
+    vertical-align middle
+  >.img
+    width 17px
+    height 17px
+    background url(../image/basic-check-o.png)
+    margin-right 10px
+  >input:checked ~ .img
+    background url(../image/basic-check.png)
+
+.m-filter
+  margin 0 34px 6px
+  border 1px solid #c9cfd5
+  >.head
+  >.body
+    height 52px
+    padding 14px 42px 14px 10px
+    box-sizing border-box
+  >.head
+    border-bottom @border
+    line-height 23px
+    >.left
+    >.right
+      font-size 0
+      .btn
+        font-size 12px
+        display inline-block
+    >.left
+      float left
+      .btn
+        margin-left 15px
+        vertical-align bottom
+        cursor pointer
+        &:hover
+          color #4188d8
+    >.right
+      float right
+      >div
+        margin-left 10px
+      .btn
+        min-width 78px
+        border 1px solid #4188d8
+        background transparent
+        border-radius 3px
+        height 22px
+        box-sizing border-box
+        padding 0 10px
+        vertical-align bottom
+        color #4188d8
+        line-height 20px
+        text-align center
+        cursor pointer
+      .m-dropdown
+        display inline-block
+        vertical-align bottom
+        >button>.ico
+          margin-left 5px
+          vertical-align 2px
+        >.list
+          top 28px
+  >.body
+    >div
+    >input
+      display inline-block
+    >input
+      border-radius 3px
+      outline none
+      border 1px solid #c8ced9
+      height 24px
+      padding 0 10px
+      box-sizing border-box
+      width 120px
+      margin 0 6px
+      color #a6abb3
+      font-size 12px
+    >.label
+      margin-right 12px
+    >.split
+      height 1px
+      width 20px
+      background #c1c3c4
+      vertical-align middle
+    >.btn
+      width 80px
+      height 24px
+      background #4188d8
+      line-height @height
+      border-radius 3px
+      text-align center
+      cursor pointer
+      color #ffffff
+      margin-left 12px

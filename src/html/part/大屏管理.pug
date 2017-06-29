@@ -1,0 +1,14 @@
+extends basic.pug
+
+append vars
+  - var title = "大屏管理"
+
+block content
+  .m-subnav
+    each s in ['情报展示', '专题展示', '报告展示']
+      a.item(href=`大屏管理-${s}.html`, class={active: subtitle == s})= s
+  .m-subcont
+    .dir 当前位置：#{title} > #{subtitle}
+    .cont
+      block page
+  block pagefoot

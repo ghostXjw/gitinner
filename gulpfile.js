@@ -9,6 +9,8 @@ gulp.task('build', function() {
     'node_modules/jquery/dist/jquery.min.js',
     'node_modules/flatpickr/dist/flatpickr.min.js',
     'node_modules/flatpickr/dist/flatpickr.min.css',
+    'node_modules/flatpickr/dist/plugins/confirmDate/confirmDate.css',
+    'node_modules/flatpickr/dist/plugins/confirmDate/confirmDate.js',
   ]).pipe(gulp.dest('dist/lib'))
 
   gulp.src([
