@@ -8,3 +8,9 @@ $('.datetime').flatpickr({
 $('.selallcb').on('change', e => {
   $('.listitemcb').prop('checked', e.currentTarget.checked)
 })
+
+$('.m-topic-module').each((i, el) => {
+  let $color = $(el).find('>.title,>.num')
+  let hue = Math.floor(Math.random() * 360)
+  $color.css('background', 'hsl(' + hue + ', 40%, 60%)')
+})

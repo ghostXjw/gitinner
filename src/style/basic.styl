@@ -304,3 +304,80 @@ body
       cursor pointer
       color #ffffff
       margin-left 12px
+
+.m-contlist
+  >.item
+    border-bottom 1px solid #dbe0e4
+    padding 22px 34px 8px 34px
+    &:last-child
+      border-bottom 0
+    >.head
+      line-height 26px
+      font-size 12px
+      overflow hidden
+      >.m-cb
+        float left
+        >.img
+          vertical-align -8px
+          margin-right 8px
+      >.title
+        color #323131
+        font-size 16px
+        float left
+      >.time
+        float right
+        color #9a9a9a
+    >.body
+      color #777777
+      line-height 22px
+      height @line-height * 2
+      overflow hidden
+    >.foot
+      height 14px
+      >.ask
+        font-size 0
+        float right
+        >.btn
+          display inline-block
+          margin-left 21px
+          cursor pointer
+          >.ico
+            height 12px
+            width 12px
+            margin-right 4px
+            display inline-block
+            vertical-align -1.4px
+          >.text
+            font-size 12px
+            display inline-block
+            color #999999
+        >.btn.yes>.ico
+          background url(../image/basic-ico-yes.png)
+        >.btn.no>.ico
+          background url(../image/basic-ico-rm.png)
+
+.m-pagenums
+  font-size 0
+  margin-bottom 50px
+  text-align center
+  >.btn
+  >.item
+    width 30px
+    height 30px
+    background white
+    color #505050
+    border-radius 3px
+    margin-right 10px
+    font-size 14px
+    display inline-block
+    line-height @height
+    cursor pointer
+    transition all .3s ease
+    &.active
+    &:hover
+      background #337fd5
+      color white
+  >.btn
+    width 70px
+
+

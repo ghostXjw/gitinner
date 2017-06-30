@@ -1,0 +1,59 @@
+mixin filter(page)
+  .m-filter
+    .head
+      .left
+        label.m-cb
+          input(type="checkbox", class="selallcb")
+          .img
+          .cont 全选
+        if page == '大屏管理-情报展示'
+          .btn 时间升序
+          .btn 批量选中
+          .btn 批量删除
+      .right
+        if page == '大屏管理-情报展示'
+          .btn 刷新
+        .m-dropdown
+          button.btn
+            .text 每页显示10
+            img.ico(src="image/basic-drop-arrow.png")
+          .list
+            .item 10
+            .item 50
+            .item 100
+    .body
+      .label 情报时间
+      input.datetime(type="text")
+      .split
+      input.datetime(type="text")
+      .btn 确定
+
+mixin contlist(page)
+  .m-contlist
+    - var i = 0
+    while i ++< 6
+      .item
+        .head
+          label.m-cb
+            input(type="checkbox", class="listitemcb")
+            .img
+          .title #{i}.沛县庆祝“三八”国际劳动妇女节暨表彰大会举行
+          .time 2017-04-07 14:37:00
+        .body 沛县庆祝“三八”国际劳动妇女节暨表彰大会于三月七日在县职教中心礼堂举行。县领导张磊、刘华东、徐龙彬、王素真，县妇联主席苏莎莎、教育局局长贺磊、县委宣传部常务副部长胡红侠、妇联副主席张... 
+        .foot
+          if page == '大屏管理-情报展示'
+            .ask
+              .btn.yes
+                .ico
+                .text 确定
+              .btn.no
+                .ico
+                .text 移除
+
+mixin pagenum()
+  .m-pagenums
+    .btn 上一页
+    - var i = 0
+    while i++< 10
+      .item(class={active: i == 1})= i
+    .btn 下一页
