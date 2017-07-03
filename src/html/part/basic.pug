@@ -35,21 +35,28 @@ html(lang="zh")
           .list
             .item(onmousedown="location.href='登录.html'") 退出登录
     .m-lnav
-      .item(class={active: title == '情报管理'}, onclick="location.href='index.html'")
+      a.item(class={active: title == '情报管理'}, href="index.html")
         .icon.qbgl
         .text 情报管理
-      .item
+      .list
+        a.item(class={active: subtitle == '情报查看'}, href="#") 情报查看
+        a.item(class={active: subtitle == '情报录入'}, href="#") 情报录入
+      a.item
         .icon.qbk
         .text 情报库
-      .item
+      a.item
         .icon.qbsp
         .text 情报审批
-      .item
+      a.item
         .icon.bgtj
         .text 报告提交
-      .item(class={active: title == '大屏管理'}, onclick="location.href='大屏管理-情报展示.html'")
+      a.item(class={active: title == '大屏管理'}, href="大屏管理-情报展示.html")
         .icon.dpgl
         .text 大屏管理
+      .list
+        a.item(class={active: subtitle == '情报展示'}, href="大屏管理-情报展示-展示.html") 情报展示
+        a.item(class={active: subtitle == '专题展示'}, href="大屏管理-专题展示.html") 专题展示
+        a.item(class={active: subtitle == '报告展示'}, href="大屏管理-报告展示-展示.html") 报告展示
     .m-cont
       block content
     block tpl

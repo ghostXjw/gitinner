@@ -1,35 +1,38 @@
-extends part/大屏管理.pug
+extends part/basic.pug
 
 append vars
+  - var title = "大屏管理"
   - var subtitle = "专题展示"
 
 append style
   link(rel="stylesheet", href="style/大屏管理-专题展示.css")
 
-block page
-  .m-filter-zhuanti
-    .label 专题来源：
-    .m-dropdown
-      button.btn
-        .text 情报分析员
-        img.ico(src="image/basic-drop-arrow.png")
-      .list
-        .item 情报分析员
-        .item 情报专家
-        .item 业余人员
-    .label 专题时间：
-    input.datetime(type="text")
-    .split
-    input.datetime(type="text")
-    .btn 确定
-  .m-cont-topic
-    - var i = 0
-    while i ++< 8
-      .m-topic-module
-        .title 热门专题一
-        .num 3225
-        .label 专题简介
-        .cont 世界各国是指世界上各个国家,现在（2017年）世界上共有228个国家和地区，其中国家为195个，地区...
+block content
+  .m-subcont
+    .dir 当前位置：#{title} > #{subtitle}
+    .m-filter-zhuanti
+      .label 专题来源：
+      .m-dropdown.select.fixed
+        button.btn
+          .text 情报分析员
+          img.ico(src="image/basic-drop-arrow.png")
         .list
-          .item 1.  朴槿惠下台的最新消息...
-          .item 2.  朴槿惠下台的最新消息...
+          .item 情报分析员
+          .item 情报专家
+          .item 业余人员
+      .label 专题时间：
+      input.datetime(type="text")
+      .split
+      input.datetime(type="text")
+      .btn 确定
+    .m-cont-topic
+      - var i = 0
+      while i ++< 8
+        .m-topic-module
+          .title 热门专题一
+          .num 3225
+          .label 专题简介
+          .cont 世界各国是指世界上各个国家,现在（2017年）世界上共有228个国家和地区，其中国家为195个，地区...
+          .list
+            .item 1.  朴槿惠下台的最新消息...
+            .item 2.  朴槿惠下台的最新消息...

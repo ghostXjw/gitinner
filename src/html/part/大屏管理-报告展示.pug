@@ -1,0 +1,50 @@
+extends basic.pug
+
+append vars
+  - var title = "大屏管理"
+  - var subtitle = "报告展示"
+
+append style
+  link(rel="stylesheet", href="style/大屏管理-报告展示.css")
+
+block content
+  .m-subnav
+    each s in ['展示', '未展示']
+      a.item(href=`大屏管理-报告展示-${s}.html`, class={active: sstitle == s})= s
+  .m-subcont
+    .dir 当前位置：#{title} > #{subtitle} > #{sstitle}
+    .m-filter-report
+      .line
+        .label 报告来源
+        .m-dropdown.select.fixed
+          button.btn
+            .text 情报分析员
+            img.ico(src="image/basic-drop-arrow.png")
+          .list
+            .item 情报分析员
+            .item 情报专家
+            .item 业余人员
+        .label 报告时间
+        input.datetime(type="text")
+        .split
+        input.datetime(type="text")
+      .line
+        .label 报告类型
+        .m-dropdown.select.fixed
+          button.btn
+            .text 情报分析员
+            img.ico(src="image/basic-drop-arrow.png")
+          .list
+            .item 情报分析员
+            .item 情报专家
+            .item 业余人员
+        .btn 确定
+    .m-report-list
+      - var n = 0
+      while n ++< 4
+        .listItem
+          .thumbnail(style="background: url(image/dpgl-bgzs-reportdemo.png)")
+          .title
+            img(src="image/dpgl-bgzs-reportdoc.png")
+            .text 保密情报参考
+  +pagenum()
