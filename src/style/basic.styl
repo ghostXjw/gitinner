@@ -47,6 +47,8 @@ body
     >.text
       display inline-block
       font-size 12px
+    >.text
+      white-space nowrap
   >button:focus + .list
     display block
   &.fixed>button>.text
@@ -173,7 +175,7 @@ body
       line-height 14px
       font-family Consolas, sans-serif
       margin-right 20px
-    &.active:after
+    &.expand:after
       transform rotate(90deg)
   >.list
     display none
@@ -188,7 +190,7 @@ body
       &.active
         color #41454b
         background #e7f1fb
-  >.item.active + .list
+  >.item.expand + .list
     display block
 
 .m-cont
@@ -408,4 +410,15 @@ body
   >.btn
     width 70px
 
-
+.m-showbtn
+  float right
+  width 110px
+  height 30px
+  border 1px solid #d3d4d6
+  border-radius 2px
+  background white
+  font-size 14px
+  color #337fd5
+  text-align center
+  line-height @height
+  cursor pointer

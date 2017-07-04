@@ -9,9 +9,10 @@ mixin filter(page)
         if page == '大屏管理-情报展示'
           .btn 时间升序
           .btn 批量选中
-          .btn 批量删除
+          .btn= '批量' + (sstitle == "展示" ? "取消展示" : "展示" )
       .right
         if page == '大屏管理-情报展示'
+          .btn 导入
           .btn 刷新
         .m-dropdown
           button.btn
@@ -41,14 +42,14 @@ mixin contlist(page)
           .time 2017-04-07 14:37:00
         .body 沛县庆祝“三八”国际劳动妇女节暨表彰大会于三月七日在县职教中心礼堂举行。县领导张磊、刘华东、徐龙彬、王素真，县妇联主席苏莎莎、教育局局长贺磊、县委宣传部常务副部长胡红侠、妇联副主席张... 
         .foot
-          if page == '大屏管理-情报展示'
-            .ask
-              .btn.yes
-                .ico
-                .text 确定
-              .btn.no
-                .ico
-                .text 移除
+          //- if page == '大屏管理-情报展示'
+          //-   .ask
+          //-     .btn.yes
+          //-       .ico
+          //-       .text 删除
+          //-     .btn.no
+          //-       .ico
+          //-       .text 移除
 
 mixin pagenum()
   .m-pagenums

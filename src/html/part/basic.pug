@@ -50,12 +50,15 @@ html(lang="zh")
       a.item
         .icon.bgtj
         .text 报告提交
-      a.item(class={active: title == '大屏管理'}, href="大屏管理-情报展示.html")
+      a.item(class={
+          active: title == '大屏管理',
+          expand: ['情报展示', '专题展示', '报告展示'].includes(subtitle)
+        }, href="大屏管理-情报展示-展示.html")
         .icon.dpgl
         .text 大屏管理
       .list
         a.item(class={active: subtitle == '情报展示'}, href="大屏管理-情报展示-展示.html") 情报展示
-        a.item(class={active: subtitle == '专题展示'}, href="大屏管理-专题展示.html") 专题展示
+        a.item(class={active: subtitle == '专题展示'}, href="大屏管理-专题展示-展示.html") 专题展示
         a.item(class={active: subtitle == '报告展示'}, href="大屏管理-报告展示-展示.html") 报告展示
     .m-cont
       block content

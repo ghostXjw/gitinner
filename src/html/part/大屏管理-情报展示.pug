@@ -15,5 +15,6 @@ block content
     .dir 当前位置：#{title} > #{subtitle} > #{sstitle}
     +filter(title + '-' + subtitle)
     +contlist(title + '-' + subtitle)
+  .m-showbtn= sstitle == "展示" ? "取消展示" : "展示" 
   +pagenum()
 

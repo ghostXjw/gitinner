@@ -1,5 +1,5 @@
 .m-filter-report
-  margin 0 34px 6px
+  margin 0 34px 36px
   border 1px solid #c9cfd5
   >.line
     height 52px
@@ -62,3 +62,80 @@
       text-align center
       cursor pointer
       color #ffffff
+
+.m-report-list
+  padding 0 34px 1px
+  font-size 0
+  min-height 435px
+  >.listItem
+    width 192px
+    margin-right 70px
+    display inline-block
+    margin-bottom 24px
+    position relative
+    cursor pointer
+    padding-bottom 10px
+    &:nth-child(4n)
+      margin-right 0
+    &.active
+      outline 2px solid #4188d8
+      &:before
+        content ''
+        width 20px
+        height 20px
+        position absolute
+        top 0
+        right 0
+        background url(../image/dpgl-ztzs-check.png)
+    &.hover>.mask
+      visibility visible
+      opacity 1
+    >.mask
+      position absolute
+      visibility hidden
+      top 0
+      left 0
+      right 0
+      bottom 0
+      background rgba(0,0,0,.4)
+      opacity 0
+      z-index 10
+      transition all .3s ease
+      padding-top 45px
+      padding-left 40px
+      >.btn
+        width 110px
+        height 30px
+        display block
+        background white
+        border-radius 2px
+        border 1px solid rgba(191,191,191,.6)
+        text-decoration none
+        color #41454b
+        line-height @height
+        font-size 12px
+        text-align center
+        margin-bottom 30px
+    >.thumbnail
+      width 192px
+      height 152px
+      box-sizing border-box
+      border 1px solid #d3d3d3
+      box-shadow 0 3px 8px rgba(15,53,96,.1)
+      border-radius 2px
+      background-size contain
+      background-position center
+      background-origin content-box
+      background-repeat no-repeat
+      padding 18px
+      margin-bottom 10px
+    >.title
+      font-size 0
+      text-align center
+      >img
+        vertical-align -4px
+        margin-right 10px
+      >.text
+        display inline-block
+        font-size 14px
+        color #696969

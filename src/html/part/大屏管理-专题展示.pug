@@ -1,4 +1,4 @@
-extends part/basic.pug
+extends basic.pug
 
 append vars
   - var title = "大屏管理"
@@ -7,7 +7,13 @@ append vars
 append style
   link(rel="stylesheet", href="style/大屏管理-专题展示.css")
 
+append script
+  script(src="script/大屏管理-专题展示.js")
+
 block content
+  .m-subnav
+    each s in ['展示', '未展示']
+      a.item(href=`大屏管理-专题展示-${s}.html`, class={active: sstitle == s})= s
   .m-subcont
     .dir 当前位置：#{title} > #{subtitle}
     .m-filter-zhuanti
@@ -36,3 +42,9 @@ block content
           .list
             .item 1.  朴槿惠下台的最新消息...
             .item 2.  朴槿惠下台的最新消息...
+          .mask
+            a.btn(href="javascript:;") 专题详情
+            a.btn(href="javascript:;") 取消展示
+            a.btn.cancel(href="javascript:;") 取消
+  .m-showbtn= sstitle == "展示" ? "取消展示" : "展示" 
+  +pagenum()

@@ -7,6 +7,9 @@ append vars
 append style
   link(rel="stylesheet", href="style/大屏管理-报告展示.css")
 
+append script
+  script(src="script/大屏管理-报告展示.js")
+
 block content
   .m-subnav
     each s in ['展示', '未展示']
@@ -23,7 +26,6 @@ block content
           .list
             .item 情报分析员
             .item 情报专家
-            .item 业余人员
         .label 报告时间
         input.datetime(type="text")
         .split
@@ -35,16 +37,19 @@ block content
             .text 情报分析员
             img.ico(src="image/basic-drop-arrow.png")
           .list
-            .item 情报分析员
-            .item 情报专家
-            .item 业余人员
+            .item 保密情报参考
+            .item 保密工作专利报告
         .btn 确定
     .m-report-list
       - var n = 0
-      while n ++< 4
+      while n ++< 12
         .listItem
-          .thumbnail(style="background: url(image/dpgl-bgzs-reportdemo.png)")
+          .thumbnail(style="background-image: url(image/dpgl-bgzs-reportdemo.png)")
           .title
             img(src="image/dpgl-bgzs-reportdoc.png")
             .text 保密情报参考
+          .mask
+            a.btn(href="javascript:;") 取消展示
+            a.btn.cancel(href="javascript:;") 取消
+  .m-showbtn= sstitle == "展示" ? "取消展示" : "展示" 
   +pagenum()
