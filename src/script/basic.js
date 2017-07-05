@@ -9,6 +9,10 @@ $('.selallcb').on('change', e => {
   $('.listitemcb').prop('checked', e.currentTarget.checked)
 })
 
+$('.selallbtn').on('click', function(){
+  $('.listitemcb, .selallcb').prop('checked', true)
+})
+
 $('.m-topic-module').each((i, el) => {
   let $color = $(el).find('>.title,>.num')
   let hue = Math.floor(Math.random() * 360)

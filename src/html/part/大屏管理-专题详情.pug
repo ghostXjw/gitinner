@@ -1,4 +1,17 @@
-extends part/basic.pug
+extends basic.pug
 
-append style
-  link(rel="stylesheet", href="style/大屏管理-专题详情.css")
+append vars
+  - var title = "大屏管理"
+  - var subtitle = "专题展示"
+
+block content
+  .m-subnav
+    each s in ['展示', '未展示']
+      a.item(href=`大屏管理-专题详情-${s}.html`, class={active: sstitle == s})= s
+  .m-subcont
+    .dir 当前位置：#{title} > 专题详情 > #{sstitle}
+    +filter('大屏管理-情报展示')
+    +contlist('大屏管理-情报展示')
+  .m-showbtn= sstitle == "展示" ? "取消展示" : "展示" 
+  +pagenum()
+
