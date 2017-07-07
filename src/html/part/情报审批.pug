@@ -1,0 +1,16 @@
+extends basic.pug
+
+append vars
+  - var title = "情报审批"
+
+append style
+  link(rel="stylesheet", href="style/情报库.css")
+
+block content
+  .m-subcont
+    .dir 当前位置：#{title} > #{subtitle}
+    +filter(title + '-情报库')
+    +c-table()
+  +pagenum()
+
+

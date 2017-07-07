@@ -24,3 +24,14 @@ $('.m-dropdown.select').on('mousedown', '.list>.item', e => {
   let p = $(e.delegateTarget)
   p.find('button>.text').text(t)
 })
+$('.bomb').on('click',function(e){
+  e.stopPropagation()
+  $(this).hide()
+})
+$('.bomb>div').on('click',function(e){
+  e.stopPropagation()
+})
+$('.close,.cancel').on('click',function(){
+  console.log("ss")
+  $('.bomb').hide()
+})

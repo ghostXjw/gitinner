@@ -10,8 +10,15 @@ mixin filter(page)
           .btn 时间升序
           .btn.selallbtn 批量选中
           .btn= '批量' + (sstitle == "展示" ? "取消展示" : "展示" )
+        if page == '情报库-情报库'||'情报审批-情报库'
+          .btn 时间升序
+          .btn 情报导出
+          .btn 批量收藏
+          .btn 批量删除
+          .btn 批量提交
+          .btn 批量研判
       .right
-        if page == '大屏管理-情报展示'
+        if page == '大屏管理-情报展示'||'情报库-情报库'
           .btn 导入
           .btn 刷新
         .m-dropdown
@@ -58,3 +65,30 @@ mixin pagenum()
     while i++< 10
       .item(class={active: i == 1})= i
     .btn 下一页
+
+//- 表格
+mixin c-table()
+  .b-content
+      table.base(cellpadding="0")
+        tr
+          th(width="300") 情报标题
+          th(width="150") 情报时间
+          th(width="130") 情报类型
+          th(width="150") 情报来源
+          th(width="200") 操作
+        - var i = 0
+        while i++<10
+          tr
+            td 
+              label.m-cb
+                input(type="checkbox", class="listitemcb")
+                .img 
+              span #{i}、中国政策转变预示刺激时代结束即将进入中国怀中国政策转变预示刺激时代结束即将进入中国怀中国政策转变预示刺激时代结束即将进入中国怀
+            td 2017-04-17 14:36
+            td 法规
+            td 情报来源
+            td
+              a(href="情报库-编辑情报.html") 编辑
+              a(href="情报库-翻译情报.html") 翻译
+              a(href="javacript:void(0);") 提交
+              a(href="javacript:void(0);").delete 删除 

@@ -1,0 +1,40 @@
+extends basic.pug
+
+append vars
+  - var title = "报告提交"
+
+append style
+  link(rel="stylesheet", href="style/情报库.css")
+
+block content
+  .m-subcont
+    .dir 当前位置：#{title} > #{subtitle}
+    .consult
+      table(cellpadding="0")
+        tr
+          th 报告名称
+          th 报告类型
+          th 日期
+          th 报告提交人
+          th 状态
+          th 操作
+        - var i = 0
+        while i++<10
+          tr
+            td 四川茂县山体滑坡时间
+            td 《保密情报参考》
+            td 2017-06-26 18:22:25
+            td 情报分析员
+            td 审批通过
+            td
+              a 上报
+              a 修改
+              a 导出
+              a.delete 删除
+
+
+
+
+
+
+

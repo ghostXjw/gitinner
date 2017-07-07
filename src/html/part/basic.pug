@@ -41,15 +41,37 @@ html(lang="zh")
       .list
         a.item(class={active: subtitle == '情报查看'}, href="#") 情报查看
         a.item(class={active: subtitle == '情报录入'}, href="#") 情报录入
-      a.item
+      a.item(class={
+          active: title == '情报库',
+          expand: ['未编辑', '已编辑', '已录入', '已翻译'].includes(subtitle)
+        }, href="情报库-未编辑.html")
         .icon.qbk
         .text 情报库
-      a.item
+      .list
+        a.item(class={active: subtitle == '未编辑'}, href="情报库-未编辑.html") 未编辑
+        a.item(class={active: subtitle == '已编辑'}, href="情报库-已编辑.html") 已编辑
+        a.item(class={active: subtitle == '已录入'}, href="情报库-已录入.html") 已录入
+        a.item(class={active: subtitle == '已翻译'}, href="情报库-已翻译.html") 已翻译
+      a.item(class={
+          active: title == '情报审批',
+          expand: ['已提交', '已审批', '已驳回',].includes(subtitle)
+        }, href="情报审批-已提交.html")
         .icon.qbsp
         .text 情报审批
-      a.item
+      .list
+        a.item(class={active: subtitle == '已提交'}, href="情报审批-已提交.html") 已提交
+        a.item(class={active: subtitle == '已审批'}, href="情报审批-已审批.html") 已审批
+        a.item(class={active: subtitle == '已驳回'}, href="情报审批-已驳回.html") 已驳回
+      a.item(class={
+          active: title == '报告提交',
+          expand: ['撰写报告', '参考情报库', '报告状态',].includes(subtitle)
+        }, href="报告提交-撰写报告.html")
         .icon.bgtj
         .text 报告提交
+      .list
+        a.item(class={active: subtitle == '撰写报告'}, href="报告提交-撰写报告.html") 撰写报告
+        a.item(class={active: subtitle == '参考情报库'}, href="报告提交-参考情报库.html") 参考情报库
+        a.item(class={active: subtitle == '报告状态'}, href="报告提交-报告状态.html") 报告状态
       a.item(class={
           active: title == '大屏管理',
           expand: ['情报展示', '专题展示', '报告展示'].includes(subtitle)
@@ -62,6 +84,14 @@ html(lang="zh")
         a.item(class={active: subtitle == '报告展示'}, href="大屏管理-报告展示-展示.html") 报告展示
     .m-cont
       block content
+    .bomb
+      div
+        div.title 删除提示
+          i.close ×
+        div.body 确定要删除情报?
+        div.btn 
+          div.cancel 取消
+          div.success 确定
     block tpl
     script(src="lib/jquery.min.js")
     script(src="lib/flatpickr.min.js")

@@ -1,0 +1,44 @@
+extends basic.pug
+
+append vars
+  - var title = "报告提交"
+
+append style
+  link(rel="stylesheet", href="style/情报库.css")
+
+block content
+  .m-subcont
+    .dir 当前位置：#{title} > #{subtitle}
+    .compose
+      ul
+        li
+          label.title 报告名称
+          input.l-input
+        li
+          label.title 期刊数
+          input.l-input
+        li
+          label.title 摘要
+          textarea
+        li
+          label.title 来源
+          input.l-input
+        li
+          label.title 报
+          input.s-input   
+          label.title.s-title 送
+          input.s-input
+        li
+          label.title 侧部
+          input.s-input   
+          label.title.s-title 编校人员
+          input.s-input   
+    .operate
+        div.rest 重置
+        div.success 确定
+        
+
+
+
+
+

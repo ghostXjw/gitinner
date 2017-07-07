@@ -1,0 +1,41 @@
+extends basic.pug
+
+append vars
+  - var title = "情报库"
+
+append style
+  link(rel="stylesheet", href="style/情报库.css")
+
+block content
+  .m-subcont
+    .dir 当前位置：#{title} > #{subtitle}
+    .info-edit
+      ul
+        li 
+          span.e-title 情报标题
+          input.l-input(placeholder='国家海洋预报台’苗柏‘最大可能登陆点是香港')
+        li
+          span.e-title 情报来源
+          input.s-input(placeholder='BBC中文网')
+          span.e-title.s-title 类型
+          input.s-input(placeholder='法规')
+          span.e-title.t-title 国别
+          input.s-input(placeholder='中国')
+        li
+          span.e-title 监测时间
+          input.datetime(type="text")
+        li
+          span.e-title 原文链接
+          input.m-input(placeholder='国家海洋预报台’苗柏‘最大可能登陆点是香港')
+          .c-url 复制链接
+        li
+          span.e-title 情报内容
+          textarea
+        li
+          span.e-title 备注
+          textarea.e-remarks(placeholder='请填写备注信息')
+      .operate
+        div.rest 重置
+        div.success 确定
+
+
