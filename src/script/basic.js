@@ -32,6 +32,8 @@ $('.bomb>div').on('click',function(e){
   e.stopPropagation()
 })
 $('.close,.cancel').on('click',function(){
-  console.log("ss")
   $('.bomb').hide()
+})
+$('a.delete').on('click', function(){
+  $('.bomb').show()
 })

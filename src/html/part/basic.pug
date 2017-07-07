@@ -35,12 +35,15 @@ html(lang="zh")
           .list
             .item(onmousedown="location.href='登录.html'") 退出登录
     .m-lnav
-      a.item(class={active: title == '情报管理'}, href="index.html")
+      a.item(class={
+          active: title == '情报管理',
+          expand: ['情报查看', '情报录入'].includes(subtitle)
+        }, href="情报管理-情报查看.html")
         .icon.qbgl
         .text 情报管理
       .list
-        a.item(class={active: subtitle == '情报查看'}, href="#") 情报查看
-        a.item(class={active: subtitle == '情报录入'}, href="#") 情报录入
+        a.item(class={active: subtitle == '情报查看'}, href="情报管理-情报查看.html") 情报查看
+        a.item(class={active: subtitle == '情报录入'}, href="情报管理-情报录入.html") 情报录入
       a.item(class={
           active: title == '情报库',
           expand: ['未编辑', '已编辑', '已录入', '已翻译'].includes(subtitle)
