@@ -24,16 +24,20 @@ $('.m-dropdown.select').on('mousedown', '.list>.item', e => {
   let p = $(e.delegateTarget)
   p.find('button>.text').text(t)
 })
-$('.bomb').on('click',function(e){
+$('.bomb,.bomp-password').on('click',function(e){
   e.stopPropagation()
   $(this).hide()
 })
-$('.bomb>div').on('click',function(e){
+$('.bomb>div,.bomp-password>div.info').on('click',function(e){
   e.stopPropagation()
 })
 $('.close,.cancel').on('click',function(){
   $('.bomb').hide()
+  $('.bomp-password').hide()
 })
 $('a.delete').on('click', function(){
   $('.bomb').show()
+})
+$('.admin-info .btn').on('click',function(){
+  $('.bomp-password').show()
 })

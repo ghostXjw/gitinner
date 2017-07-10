@@ -1,0 +1,26 @@
+extends part/basic.pug
+
+append style
+    link(rel="stylesheet", href="style/情报库.css")
+
+append vars
+    - var title = "用户管理"
+
+block content
+    .m-subcont
+        .dir 当前位置：#{title}
+        .admin-info
+            ul
+                li
+                    label 当前用户 ：
+                    label.admin 情报分析员
+                li
+                    label 当前密码 ：
+                    label.password *********
+                    label.btn 修改密码
+                li
+                    label 联系电话 ：
+                    label.tel 173*****525
+                li
+                    label 绑定邮箱 ：
+                    label.email 5317****99@qq.com

@@ -1,0 +1,40 @@
+extends part/情报管理.pug
+
+append style
+    link(rel="stylesheet", href="style/情报库.css")
+
+append vars
+    - var subtitle = "情报录入"
+
+block content
+    .m-subcont
+        .dir 当前位置：#{title} > #{subtitle}
+        .compose
+            ul
+                li
+                    label.title 情报标题
+                    input.l-input
+                li
+                    label.title 录入时间
+                    input.s-input.datetime(type="text")
+                li
+                    label.title 情报类别
+                    .m-dropdown.select.fixed
+                        button.btn
+                            .text 法规
+                            img.ico(src="image/basic-drop-arrow.png")
+                        .list
+                            .item 法规
+                            .item 法规
+                li
+                    label.title 国别
+                    input.s-input
+                li
+                    label.title 情报内容
+                    textarea
+                li
+                    label.title 情报录入人
+                    input.s-input 
+                .operate.mrt90
+                    div.rest 重置
+                    div.success 确定
