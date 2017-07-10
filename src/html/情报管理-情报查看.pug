@@ -1,0 +1,51 @@
+extends part/情报管理.pug
+
+append style
+  link(rel="stylesheet", href="style/情报管理-情报查看.css")
+
+append vars
+  - var subtitle = "情报查看"
+
+block content
+  .m-subcont
+    .dir 当前位置：#{title} > #{subtitle}
+    +filter('情报管理-情报查看')
+    .m-contlist
+      - var i = 0
+      while i ++< 5
+        .item
+          .head
+            label.m-cb
+              input(type="checkbox", class="listitemcb")
+              .img
+            .title #{i}.国家海洋预报台:"苗柏"最大可能登陆地点是香港
+            .time 2017-04-07 14:37:00
+          .body 国家海洋预报台发布：今年第2号台风“苗柏”今天中午已加强为强热带风暴级，15时其位于距离广东省深圳市偏南方向165公里的南海北部海面上。预计“苗柏”将于今天前半夜在珠江口以东沿海登陆，多家预报机构都显示，最大可能登陆地点就是香港！
+          .foot 
+            .left-info
+              label 来源 :
+                .cont BBC中文网
+              label 国别 :
+                .cont 英国
+              label 类别 :
+                .w-dropdown
+                  button.btn 
+                    .text 请选择情报类别
+                    img.ico(src="image/qingbao-drop.png")
+                  .list
+                    .item 法规
+                    .item 标准
+                    .item 技术
+                    .item 威胁
+                    .item 新闻事件
+            .right-info
+              label.checkbox
+                input(type='checkbox' class='collect')
+                .img.collect
+                .cont 收藏至情报库
+              label
+                input(type='checkbox' class='delete')
+                .img.delete
+                .cont 删除
+                          
+  +pagenum()

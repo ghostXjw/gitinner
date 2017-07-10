@@ -1,0 +1,90 @@
+input
+  display none
+.m-contlist>.item>.body
+  padding-left 28px
+.m-contlist>.item>.foot
+  height 20px
+  margin-top 9px
+  margin-bottom 9px
+  color #999999 
+  padding-left 28px
+  .left-info
+    float left
+    .cont
+      display inline-block
+      margin-right 12px 
+    .w-dropdown
+      position relative
+      display inline-block
+      margin-left 8px
+      .btn
+        height 20px
+        width 100%
+        background white
+        outline none
+        border 1px solid #c9cfd5
+        border-radius 3px
+        cursor pointer
+        box-sizing border-box
+        background transparent
+        &:focus + .list
+          display  block
+        .text
+          font-size 12px
+          transform scale(0.83)
+          display inline-block 
+          color #999999  
+        .ico
+          margin-bottom: 3px;
+      .list
+        display none
+        background white
+        box-sizing border-box
+        box-shadow 0 8px 14px rgba(0, 0, 0, 0.08)
+        border-radius 4px
+        border 1px solid #c9cfd5
+        display none
+        position absolute
+        left 0
+        right 0
+        top 25px
+        z-index 100
+        color #5d6267
+        .item
+          height 26px
+          line-height 26px
+          text-align center
+          padding-right 20px
+          font-size 14px
+          cursor pointer
+          color #5d6267
+          font-size 12px
+          &:hover
+            color #659bdd
+            background #ecf3fe
+  .right-info
+    float right
+    label.checkbox :checked ~ .img.collect
+      background  url(../image/collect.png) no-repeat 
+    label.checkbox 
+      margin-right 16px   
+    .img.collect
+      width 13px
+      height 12px
+      background url(../image/nocollect.png) no-repeat
+      display inline-block 
+    .img.delete
+      width 12px
+      height 12px
+      background url(../image/delete.png) no-repeat
+      display inline-block
+    .cont
+      display inline-block
+      font-size 12px
+      font-family "微软雅黑"
+      
+  
+  
+
+
+
