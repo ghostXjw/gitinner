@@ -337,7 +337,27 @@ body
       cursor pointer
       color #ffffff
       margin-left 12px
+    >.btns
+      float right
+      border-radius 3px
+      overflow hidden
+      .btn
+        float left
+        width 60px
+        height 24px
+        line-height @height
+        text-align center 
+        cursor pointer
+        color #4188d8
+        border 1px solid #4188d8
+        &.active
+          border 1px solid #4188d8
+          background #4188d8
+          color #ffffff
+        &:first-child
+          border-right 0
 
+        
 .m-contlist
   >.item
     border-bottom 1px solid #dbe0e4

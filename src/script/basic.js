@@ -41,3 +41,4 @@ $('a.delete').on('click', function(){
 $('.admin-info .btn').on('click',function(){
   $('.bomp-password').show()
 })
+

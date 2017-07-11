@@ -35,6 +35,10 @@ mixin filter(page)
       .split
       input.datetime(type="text")
       .btn 确定
+      if page=='情报管理-情报查看'
+        .btns
+          .btn.list.active 列表
+          .btn.cont 摘要
 
 mixin contlist(page)
   .m-contlist
