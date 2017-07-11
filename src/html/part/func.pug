@@ -10,7 +10,7 @@ mixin filter(page)
           .btn 时间升序
           .btn.selallbtn 批量选中
           .btn= '批量' + (sstitle == "展示" ? "取消展示" : "展示" )
-        if page == '情报库-情报库'||'情报审批-情报库'
+        else if page == '情报库-情报库'||'情报审批-情报库'
           .btn 时间升序
           .btn 情报导出
           .btn 批量收藏
