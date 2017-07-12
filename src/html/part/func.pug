@@ -106,8 +106,10 @@ mixin pagenum()
     while i++< 10
       .item(class={active: i == 1})= i
     .btn 下一页
-    .sum 共10页
-    .sumt 共100条
+    .sum 共10页,
+    .sumt 共计 
+      span 100
+    .sumt.t 条
 
 //- 表格
 mixin c-table(type)
