@@ -305,6 +305,43 @@ body
           vertical-align 2px
         >.list
           top 28px
+  >.borderb
+    border-bottom none
+    >.approval
+      font-size 12px 
+      >.body
+        >.label
+          margin-right 12px
+          display inline-block
+        >input
+          border-radius 3px
+          outline none
+          border 1px solid #c8ced9
+          height 24px
+          padding 0 10px
+          -webkit-box-sizing: border-box
+          box-sizing border-box
+          width 120px
+          margin 0 6px
+          color #a6abb3
+          font-size 12px
+          display inline-block
+        >.split
+          height 1px
+          width 20px
+          background #c1c3c4
+          vertical-align middle
+          display inline-block
+        >.btn
+          width 80px
+          height 24px
+          background #4188d8
+          line-height @height
+          border-radius 3px
+          text-align center
+          cursor pointer
+          color #ffffff
+          margin-left 12px
   >.body
     >div
     >input
@@ -377,6 +414,9 @@ body
         color #323131
         font-size 16px
         float left
+        >a 
+          text-decoration none
+          color #323131
       >.time
         float right
         color #9a9a9a
@@ -385,6 +425,7 @@ body
       line-height 22px
       height @line-height * 2
       overflow hidden
+      padding-left 24px
     >.foot
       height 14px
       >.ask
@@ -432,6 +473,17 @@ body
       color white
   >.btn
     width 70px
+  >.sum
+  >.sumt
+    width 40px
+    height 30px
+    line-height 30px
+    display inline-block
+    vertical-align top
+    color #505050
+    font-size 12px
+  >.sumt
+    min-width 60px
 
 .m-showbtn
   float right
@@ -696,3 +748,36 @@ body
       text-align center
       margin-top 65px
       box-shadow  0px 2px 5px rgba(65,125,216,0.6)
+
+.zt-title,.zt-info
+  padding-left: 34px
+  font-size 14px
+  height 22px
+  line-height 22px
+  margin-bottom 15px
+  label
+    font-weight bold
+    color #696969
+  p
+    display inline-block
+    color #8e8e8e
+    margin 0
+    padding 0
+    width 800px
+    overflow hidden
+    vertical-align middle
+    height 24px
+    white-space nowrap
+    text-overflow: ellipsis
+    padding-left 5px
+  a
+    text-decoration none
+    color #696969
+    padding-left 15px
+    padding-right 10px
+    background: url(../image/Arrow.png) no-repeat right
+.borderb
+  border-bottom none
+
+
+  

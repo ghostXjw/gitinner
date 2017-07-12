@@ -15,27 +15,49 @@ block content
           label.title 报告名称
           input.l-input
         li
+          label.title 撰写时间
+          input.l-input
+        li
           label.title 期刊数
           input.l-input
+        li
+          label.title 报告类型
+          .m-dropdown.select.fixed
+            button.btn
+              .text 保密情报参考
+              img.ico(src="image/basic-drop-arrow.png")
+            .list
+              .item 保密情报参考
+              .item 保密情报参考
+          label.title.s-title 正文题目
+          input.s-input(placeholder="请输入正文题目")
+        li
+          label.title 正文摘要
+          textarea
         li
           label.title 摘要
           textarea
         li
-          label.title 来源
-          input.l-input
+          label.title 撰写人
+          input.s-input   
+          label.title.s-title 来源
+          input.s-input
         li
           label.title 报
           input.s-input   
           label.title.s-title 送
           input.s-input
         li
-          label.title 侧部
+          label.title 编部:
           input.s-input   
-          label.title.s-title 编校人员
+          label.title.s-title 测部
+          input.s-input
+        li
+          label.title 编校人员
           input.s-input   
     .operate
-        div.rest 重置
-        div.success 确定
+        div.rest 返回
+        div.success 保存
         
 
 

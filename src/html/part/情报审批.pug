@@ -9,8 +9,8 @@ append style
 block content
   .m-subcont
     .dir 当前位置：#{title} > #{subtitle}
-    +filter(title + '-情报库')
-    +c-table()
+    +approval(title + '-情报库')
+    +qc-table(subtitle)
   +pagenum()
 
 

@@ -10,13 +10,17 @@ mixin filter(page)
           .btn 时间升序
           .btn.selallbtn 批量选中
           .btn= '批量' + (sstitle == "展示" ? "取消展示" : "展示" )
-        else if page == '情报库-情报库'||'情报审批-情报库'||'情报管理-情报查看'
-          .btn 时间升序
+        else if page == '情报管理-情报查看'
+          .btn 时间降序
           .btn 情报导出
           .btn 批量收藏
           .btn 批量删除
-          .btn 批量提交
           .btn 批量研判
+        else if page == '情报审批-情报库' || '情报库-情报库'
+          .btn 时间降序
+          .btn 情报导出
+          .btn 批量删除
+          .btn 批量提交         
       .right
         if page == '情报管理-情报查看'
           .btn 导入
@@ -28,7 +32,7 @@ mixin filter(page)
           .list
             .item 10
             .item 50
-            .item 100
+            .item 100       
     .body
       .label 情报时间
       input.datetime(type="text")
@@ -39,6 +43,39 @@ mixin filter(page)
         .btns
           .btn.list.active 列表
           .btn.cont 摘要
+
+mixin approval(page)
+  .m-filter
+    .head.borderb
+      .left.approval
+        .body
+          .label 情报时间
+          input.datetime(type="text")
+          .split
+          input.datetime(type="text")
+          .btn 确定 
+      .right
+        if page == '大屏管理-情报展示' || '情报审批-情报库'
+          .btn 刷新
+          .m-dropdown
+            button.btn
+              .text 每页显示10
+              img.ico(src="image/basic-drop-arrow.png")
+            .list
+              .item 10
+              .item 50
+              .item 100
+        else if page == '情报库-情报库'||'情报管理-情报查看'
+          .btn 导入
+          .btn 刷新
+          .m-dropdown
+            button.btn
+              .text 每页显示10
+              img.ico(src="image/basic-drop-arrow.png")
+            .list
+              .item 10
+              .item 50
+              .item 100
 
 mixin contlist(page)
   .m-contlist
@@ -69,9 +106,11 @@ mixin pagenum()
     while i++< 10
       .item(class={active: i == 1})= i
     .btn 下一页
+    .sum 共10页
+    .sumt 共100条
 
 //- 表格
-mixin c-table()
+mixin c-table(type)
   .b-content
       table.base(cellpadding="0")
         tr
@@ -92,7 +131,52 @@ mixin c-table()
             td 法规
             td 情报来源
             td
-              a(href="情报库-编辑情报.html") 编辑
-              a(href="情报库-翻译情报.html") 翻译
-              a(href="javacript:void(0);") 提交
-              a(href="javacript:void(0);").delete 删除 
+              if type == "未编辑"
+                a(href="情报库-编辑情报.html") 编辑
+                a(href="情报库-翻译情报.html") 翻译
+                a(href="javacript:void(0);") 提交
+                a(href="javacript:void(0);").delete 删除
+              else if type == "已编辑"
+                a(href="情报库-翻译情报.html") 翻译
+                a(href="javacript:void(0);") 提交
+                a(href="javacript:void(0);").delete 删除
+              else if type == '已翻译'
+                a(href="javacript:void(0);") 提交
+                a(href="javacript:void(0);").delete 删除
+//-情报审批                
+mixin qc-table(type)
+  .b-content
+      table.base(cellpadding="0")
+        tr
+          th(width="300") 情报标题
+          th(width="150") 情报时间
+          th(width="130") 提交时间
+          if type == "已提交"
+            th(width="150") 情报类型
+            th(width="200") 国别
+          if type=="已审批"
+            th(width="150") 情报类型
+            th(width="100") 国别
+            th(width="100") 提交人
+          else if type == "已驳回"
+            th(width="100") 情报类型
+            th(width="50") 国别
+            th(width="100") 提交人
+            th(width="100") 驳回理由
+        - var i = 0
+        while i++<10
+          tr
+            td 
+              label.m-cb
+                input(type="checkbox", class="listitemcb")
+                .img 
+              span #{i}、中国政策转变预示刺激时代结束即将进入中国怀中国政策转变预示刺激时代结束即将进入中国怀中国政策转变预示刺激时代结束即将进入中国怀
+            td 2017-04-17 14:36
+            td 2017-04-17 14:36
+            td 情报来源
+            td 美国
+            if type == "已审批"
+              td 情报分析员
+            if type == "已驳回"
+              td 情报分析员
+              td 不行 
