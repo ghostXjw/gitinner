@@ -110,6 +110,39 @@ mixin approval(page)
               .item 50
               .item 100
 
+mixin approval(page)
+  .m-filter
+    .head.borderb
+      .left.approval
+        .body
+          .label 情报时间
+          input.datetime(type="text")
+          .split
+          input.datetime(type="text")
+          .btn 确定 
+      .right
+        if page == '大屏管理-情报展示' || '情报审批-情报库'
+          .btn 刷新
+          .m-dropdown
+            button.btn
+              .text 每页显示10
+              img.ico(src="image/basic-drop-arrow.png")
+            .list
+              .item 10
+              .item 50
+              .item 100
+        else if page == '情报库-情报库'||'情报管理-情报查看'
+          .btn 导入
+          .btn 刷新
+          .m-dropdown
+            button.btn
+              .text 每页显示10
+              img.ico(src="image/basic-drop-arrow.png")
+            .list
+              .item 10
+              .item 50
+              .item 100
+
 mixin contlist(page)
   .m-contlist
     - var i = 0
