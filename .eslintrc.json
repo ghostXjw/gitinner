@@ -13,7 +13,8 @@
     "sourceType": "module"
   },
   "globals": {
-    "$": false
+    "$": false,
+    "confirmDatePlugin": false
   },
   "rules": {
     "no-const-assign": "warn",

@@ -1,8 +1,8 @@
-$btns = $('.m-filter>.body>.btns>.btn')
-$page = $('.m-contlist')
+let $btns = $('.m-filter>.body>.btns>.btn')
+let $page = $('.m-contlist')
 
 $btns.click(function(){
-  $el = $(this)
+  let $el = $(this)
   if(!$el.hasClass('active')){
     $btns.removeClass('active')
     $el.addClass('active')
