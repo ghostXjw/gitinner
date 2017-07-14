@@ -2,6 +2,7 @@ $('.datetime').flatpickr({
   enableTime: true,
   locale: 'zh',
   time_24hr: true,
+  allowInput:true,
   plugins: [new confirmDatePlugin({})]
 })
 
