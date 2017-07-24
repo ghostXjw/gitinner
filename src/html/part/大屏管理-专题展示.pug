@@ -16,21 +16,14 @@ block content
       a.item(href=`大屏管理-专题展示-${s}.html`, class={active: sstitle == s})= s
   .m-subcont
     .dir 当前位置：#{title} > #{subtitle}
-    .m-filter-zhuanti
-      .label 专题来源：
-      .m-dropdown.select.fixed
-        button.btn
-          .text 情报分析员
-          img.ico(src="image/basic-drop-arrow.png")
-        .list
-          .item 情报分析员
-          .item 情报专家
-          .item 业余人员
-      .label 专题时间：
-      input.datetime(type="text")
-      .split
-      input.datetime(type="text")
-      .btn 确定
+    form
+      .m-filter-zhuanti
+
+        .label 专题时间：
+        input.datetime(type="text")
+        .split
+        input.datetime(type="text")
+        button.btn 确定
     .m-cont-topic
       - var i = 0
       while i ++< 8

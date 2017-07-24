@@ -1,40 +1,57 @@
 extends part/情报管理.pug
 
 append style
+    link(rel="stylesheet", href="lib/select2.min.css")
     link(rel="stylesheet", href="style/情报库.css")
+    
 
 append vars
     - var subtitle = "情报录入"
+append script
+    script(src="script/select2.min.js")
 
 block content
     .m-subcont
-        .dir 当前位置：#{title} > #{subtitle}
+        .dir 当前位置：#{title} > #{subtitle} 
         .compose
-            ul
-                li
-                    label.title 情报标题
-                    input.l-input
-                li
-                    label.title 录入时间
-                    input.s-input.datetime(type="text")
-                li
-                    label.title 情报类别
-                    .m-dropdown.select.fixed
-                        button.btn
-                            .text 法规
-                            img.ico(src="image/basic-drop-arrow.png")
-                        .list
-                            .item 法规
-                            .item 法规1
-                li
-                    label.title 国别
-                    input.s-input
-                li
-                    label.title 情报内容
-                    textarea
-                li
-                    label.title 情报录入人
-                    input.s-input 
-                .operate.mrt90
-                    div.rest 重置
-                    div.success 确定
+            form
+                ul
+                    li
+                        label.title 情报标题
+                        input.l-input
+                    li
+                        label.title 录入时间
+                        input.s-input.datetime(type="text")
+                    li
+                        label.title 情报类别
+                        .m-dropdown.select
+                            select.selt(name="type")
+                                option 法规
+                                option 法规
+
+                    li
+                        label.title 国别
+                        .m-dropdown
+                            select.js-example-basic-single.selt
+                                option 法规
+                                option 重置
+                                option 确定
+                                option 录入
+                                option 录入
+                                option 录入
+                                option 录入
+                                option 录入
+                                option 录入
+                                option 录入
+                                option 录入
+                                option 录入
+
+                    li
+                        label.title 情报内容
+                        script#myEditor(type="text/plain",style="width:630px;height:140px")
+                    li
+                        label.title 情报录入人
+                        input.s-input 
+                    .operate.oBtn.mrt90
+                        button(type="button").rest 重置
+                        button(type="button").success 确定

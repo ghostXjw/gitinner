@@ -11,6 +11,7 @@ html(lang="zh")
     link(rel="stylesheet", href="lib/confirmDate.css")
     link(rel="stylesheet", href="lib/themes/airbnb.css")
     link(rel="stylesheet", href="style/basic.css")
+    link(rel="stylesheet", href="lib/umeditor.min.css")
     block style
   body
     .m-head
@@ -36,6 +37,26 @@ html(lang="zh")
           .list
             .item(onmousedown="location.href='登录.html'") 退出登录
     .m-lnav
+      a.item(class={
+          active: title == '审阅人',
+          expand: ['用户添加', '用户查看'].includes(subtitle)
+        }, href="用户列表审阅人.html")
+        .icon.qbgl
+        .text 用户审阅人
+      .list
+        a.item(class={active: subtitle == '用户添加'}, href="用户添加.html") 用户添加
+      a.item(class={
+          active: title == '操作日志',
+          expand: [ '操作日志'].includes(subtitle)
+        }, href="操作日志.html")
+        .icon.qbgl
+        .text 操作日志
+      a.item(class={
+          active: title == '用户列表',
+          expand: [ '用户列表'].includes(subtitle)
+        }, href="用户列表.html")
+        .icon.qbgl
+        .text 用户列表
       a.item(class={
           active: title == '情报管理',
           expand: ['情报查看', '情报录入'].includes(subtitle)
@@ -96,6 +117,10 @@ html(lang="zh")
         div.btn 
           div.cancel 取消
           div.success 确定
+    .bomb.bombmessage
+      div
+        div.ico
+        div.infomessge 提交成功
     .bomp-password
       div.info
         div.title 修改密码
@@ -116,11 +141,26 @@ html(lang="zh")
               input(placeholder="请输入新密码")
         div.btn 
           div.cancel 取消
-          div.success 确定           
+          div.success 确定 
+    .dh-panel
+      .contain
+        .head 导入数据
+          i.close ×
+        .body
+          form
+            input(type="file")
+            input(type="submit")
+            a(href="javascript:") 下载模板
+        .footer
+          p 导入文件不能超过5M，仅允许导入“xls”或“xlsx”格式文件！          
     block tpl
     script(src="lib/jquery.min.js")
     script(src="lib/flatpickr.min.js")
     script(src="lib/confirmDate.js")
     script(src="lib/l10n/zh.js")
+    script(src="lib/template.min.js")
+    script(src="lib/umeditor.config.js")
+    script(src="lib/umeditor.min.js")
+    script(src="lib/lang/zh-cn.js")
     script(src="script/basic.js")
     block script

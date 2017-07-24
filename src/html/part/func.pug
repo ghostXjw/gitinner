@@ -1,147 +1,148 @@
 mixin filter(page)
-  .m-filter
-    .head
-      .left
-        label.m-cb
-          input(type="checkbox", class="selallcb")
-          .img
-          .cont 全选
-        if page == '大屏管理-情报展示'
-          .btn 时间升序
-          .btn.selallbtn 批量选中
-          .btn= '批量' + (sstitle == "展示" ? "取消展示" : "展示" )
-        else if page == '情报管理-情报查看'
-          .btn 时间降序
-          .btn 情报导出
-          .btn 批量收藏
-          .btn 批量删除
-          .btn 批量研判
-        else if page == '情报审批-情报库' || '情报库-情报库'
-          .btn 时间降序
-          .btn 情报导出
-          .btn 批量删除
-          .btn 批量提交         
-      .right
-        if page == '情报管理-情报查看'
-          .btn 导入
-        .btn 刷新
-        .m-dropdown
-          button.btn
-            .text 每页显示10
-            img.ico(src="image/basic-drop-arrow.png")
-          .list
-            .item 10
-            .item 50
-            .item 100       
-    .body
-      .label 情报时间
-      input.datetime(type="text")
-      .split
-      input.datetime(type="text")
-      .btn 确定
-      if page=='情报管理-情报查看'
-        .btns
-          .btn.list.active 列表
-          .btn.cont 摘要
+  form.form
+    .m-filter
+      .head
+        .left
+          label.m-cb
+            input(type="checkbox", class="selallcb")
+            .img
+            .cont 全选
+          if page == '大屏管理-情报展示'
+            .btn 时间升序
+            .btn.selallbtn 批量选中
+            .btn= '批量' + (sstitle == "展示" ? "取消展示" : "展示" )
+          else if page == '情报管理-情报查看'
+            .btn 时间降序
+            .btn 情报导出
+            .btn 批量收藏
+            .btn 批量删除
+            .btn.yp 批量研判
+              ul
+                li 法规
+                li 标准
+                li 技术
+                li 威胁
+                li 新闻事件
+          else if page == '情报审批-情报库' || '情报库-情报库'
+            .btn 时间降序
+            .btn 情报导出
+            .btn 批量删除
+            .btn 批量提交         
+        .right
+          if page == '情报管理-情报查看'
+            .btn 导入
+          .btn 刷新
+          .m-dropdown
+            select.selt
+              option 每页显示10
+              option 每页显示50
+              option 每页显示100
+      .body
+        .label 情报时间
+        input.datetime(type="text",name="stime")
+        .split
+        input.datetime(type="text",name="etime")
+        button(type="button").btn 确定
+        if page=='情报管理-情报查看'
+          .btns
+            .btn.list.active 列表
+            .btn.cont 摘要
 
 mixin approval(page)
-  .m-filter
-    .head.borderb
-      .left.approval
-        .body
-          .label 情报时间
-          input.datetime(type="text")
-          .split
-          input.datetime(type="text")
-          .btn 确定 
-      .right
-        if page == '大屏管理-情报展示' || '情报审批-情报库'
-          .btn 刷新
-          .m-dropdown
-            button.btn
-              .text 每页显示10
-              img.ico(src="image/basic-drop-arrow.png")
-            .list
-              .item 10
-              .item 50
-              .item 100
-        else if page == '情报库-情报库'||'情报管理-情报查看'
-          .btn 导入
-          .btn 刷新
-          .m-dropdown
-            button.btn
-              .text 每页显示10
-              img.ico(src="image/basic-drop-arrow.png")
-            .list
-              .item 10
-              .item 50
-              .item 100
+  form.form
+    .m-filter
+      .head.borderb
+        .left.approval
+          .body
+            .label 情报时间
+            input.datetime(type="text",name="stime")
+            .split
+            input.datetime(type="text",name="etime")
+            button(type="button").btn 确定 
+        .right
+          if page == '大屏管理-情报展示' || '情报审批-情报库'
+            .btn 刷新
+            .m-dropdown
+              select.selt
+                option 每页显示10
+                option 每页显示10
+                option 每页显示100
+          else if page == '情报库-情报库'||'情报管理-情报查看'
+            .btn 导入
+            .btn 刷新
+            .m-dropdown
+              select.selt
+                option 每页显示10
+                option 每页显示10
+                option 每页显示100
 
-mixin approval(page)
-  .m-filter
-    .head.borderb
-      .left.approval
-        .body
-          .label 情报时间
-          input.datetime(type="text")
-          .split
-          input.datetime(type="text")
-          .btn 确定 
-      .right
-        if page == '大屏管理-情报展示' || '情报审批-情报库'
-          .btn 刷新
-          .m-dropdown
-            button.btn
-              .text 每页显示10
-              img.ico(src="image/basic-drop-arrow.png")
-            .list
-              .item 10
-              .item 50
-              .item 100
-        else if page == '情报库-情报库'||'情报管理-情报查看'
-          .btn 导入
-          .btn 刷新
-          .m-dropdown
-            button.btn
-              .text 每页显示10
-              img.ico(src="image/basic-drop-arrow.png")
-            .list
-              .item 10
-              .item 50
-              .item 100
+//- mixin approval(page)
+//-   .m-filter
+//-     .head.borderb
+//-       .left.approval
+//-         .body
+//-           form.form
+//-             .label 情报时间
+//-             input.datetime(type="text")
+//-             .split
+//-             input.datetime(type="text")
+//-             button(type="button").btn 确定2 
+//-       .right
+//-         if page == '大屏管理-情报展示' || '情报审批-情报库'
+//-           .btn 刷新
+//-           .m-dropdown
+//-             button.btn
+//-               .text 每页显示10
+//-               img.ico(src="image/basic-drop-arrow.png")
+//-             .list
+//-               .item 10
+//-               .item 50
+//-               .item 100
+//-         else if page == '情报库-情报库'||'情报管理-情报查看'
+//-           .btn 导入
+//-           .btn 刷新
+//-           .m-dropdown
+//-             button.btn
+//-               .text 每页显示10
+//-               img.ico(src="image/basic-drop-arrow.png")
+//-             .list
+//-               .item 10
+//-               .item 50
+//-               .item 100
 
-mixin approval(page)
-  .m-filter
-    .head.borderb
-      .left.approval
-        .body
-          .label 情报时间
-          input.datetime(type="text")
-          .split
-          input.datetime(type="text")
-          .btn 确定 
-      .right
-        if page == '大屏管理-情报展示' || '情报审批-情报库'
-          .btn 刷新
-          .m-dropdown
-            button.btn
-              .text 每页显示10
-              img.ico(src="image/basic-drop-arrow.png")
-            .list
-              .item 10
-              .item 50
-              .item 100
-        else if page == '情报库-情报库'||'情报管理-情报查看'
-          .btn 导入
-          .btn 刷新
-          .m-dropdown
-            button.btn
-              .text 每页显示10
-              img.ico(src="image/basic-drop-arrow.png")
-            .list
-              .item 10
-              .item 50
-              .item 100
+//- mixin approval(page)
+//-   .m-filter
+//-     .head.borderb
+//-       .left.approval
+//-         .body
+//-           form.form
+//-             .label 情报时间
+//-             input.datetime(type="text")
+//-             .split
+//-             input.datetime(type="text")
+//-             button(type="button").btn 确定 
+//-       .right
+//-         if page == '大屏管理-情报展示' || '情报审批-情报库'
+//-           .btn 刷新
+//-           .m-dropdown
+//-             button.btn
+//-               .text 每页显示10
+//-               img.ico(src="image/basic-drop-arrow.png")
+//-             .list
+//-               .item 10
+//-               .item 50
+//-               .item 100
+//-         else if page == '情报库-情报库'||'情报管理-情报查看'
+//-           .btn 导入
+//-           .btn 刷新
+//-           .m-dropdown
+//-             button.btn
+//-               .text 每页显示10
+//-               img.ico(src="image/basic-drop-arrow.png")
+//-             .list
+//-               .item 10
+//-               .item 50
+//-               .item 100
 
 mixin contlist(page)
   .m-contlist
@@ -156,14 +157,11 @@ mixin contlist(page)
           .time 2017-04-07 14:37:00
         .body 沛县庆祝“三八”国际劳动妇女节暨表彰大会于三月七日在县职教中心礼堂举行。县领导张磊、刘华东、徐龙彬、王素真，县妇联主席苏莎莎、教育局局长贺磊、县委宣传部常务副部长胡红侠、妇联副主席张... 
         .foot
-          //- if page == '大屏管理-情报展示'
-          //-   .ask
-          //-     .btn.yes
-          //-       .ico
-          //-       .text 删除
-          //-     .btn.no
-          //-       .ico
-          //-       .text 移除
+          if page == '大屏管理-情报展示'
+            .ask
+              .btn.no
+                .ico
+                .text 移除
 
 mixin pagenum()
   .m-pagenums
@@ -176,7 +174,19 @@ mixin pagenum()
     .sumt 共计 
       span 100
     .sumt.t 条
-
+mixin upagnum()
+  .u-pagenums
+    .btn 《上一页
+    - var i=0
+    while i++<5
+      .item(class={active: i == 1})=i
+    .btn 下一页》
+    .cur 当前
+      input(type="text")
+      span /
+      span 10条,
+      span 共
+      span 105条
 //- 表格
 mixin c-table(type)
   .b-content
@@ -211,6 +221,28 @@ mixin c-table(type)
               else if type == '已翻译'
                 a(href="javacript:void(0);") 提交
                 a(href="javacript:void(0);").delete 删除
+//-用户表格
+mixin u-table(type)
+  .b-content
+      table.base(cellpadding="0")
+        tr
+          th(width="300") 登录账号
+          th(width="200") 用户名
+          th(width="200") 手机号码
+          th(width="200") 操作
+        - var i=0
+        while i++<5
+          tr
+            td 不二
+            td 不二真不二
+            td 17312312312
+            td 
+              if type == "用户列表"
+                a.user(href="javascript:;") 分配角色
+              else if type == "审阅人"
+                a.modify(href="javascript:;") 修改
+                a.del(href="javascript:;",onclick="DelChild(this)") 删除  
+
 //-情报审批                
 mixin qc-table(type)
   .b-content

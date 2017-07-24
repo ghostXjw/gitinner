@@ -1,0 +1,49 @@
+extends part/basic.pug
+
+append vars 
+  - var title="审阅人"
+  - var subtitle="用户查看"
+  
+append style
+  link(rel="stylesheet", href="style/用户管理.css")
+
+append script
+  script(src="script/用户管理.js")
+
+block content
+  .m-subcont.mlist
+    - var type = "审阅人"
+    +u-table(type)
+  .m-subcont.change
+    .dir 当前位置：#{title} > #{subtitle}
+    .consult
+      form(action="")
+        ul.userInfo
+          li
+            label 姓名：
+            input(type="text",placeholder="请输入用户名",name="username")
+            label.prompt 姓名不能为空
+          li
+            label 登录账号：
+            input(type="text",placeholder="请输入登录账号",name="useraccount")
+            label.prompt 账号不能为空
+          li
+            label 密码：
+            input(type="text",placeholder="请输入密码",name="userpassword1")
+            label.prompt 密码不能为空
+          li
+            label 确认密码：
+            input(type="text",placeholder="请输入密码",name="userpassword2")
+            label.prompt 请输入确认密码
+          li
+            label 邮箱：
+            input(type="text",placeholder="请输入邮箱",name="usermail")
+            label.prompt 邮箱格式不对
+          li
+            label 手机：
+            input(type="text",placeholder="请输入手机号码",name="usertel")
+            label.prompt 手机格式不对
+
+        .saveBtn.chan
+          button.save(type="button",onclick="check2()") 保存
+          button.ret(type="button") 返回

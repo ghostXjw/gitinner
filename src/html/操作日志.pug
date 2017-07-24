@@ -1,0 +1,30 @@
+extends part/basic.pug
+
+append style
+  link(rel="stylesheet", href="style/用户管理.css")
+
+append script
+  script(src="script/用户管理.js")
+
+append vars
+  - var title="操作日志" 
+
+block content
+  .m-subcont
+    .b-content
+      table.base(cellpadding="0")
+          tr
+            th(width="150") 创建人
+            th(width="300") 操作内容
+            th(width="100") 操作
+            th(width="100") 类型
+            th(width="280") 创建时间
+          - var i=0
+          while i++<5
+            tr
+              td  超级管理员 
+              td  操作内容 
+              td  操作
+              td  类型 
+              td  创建时间 
+    +upagnum()

@@ -12,7 +12,30 @@ gulp.task('build:lib', function() {
     'node_modules/flatpickr/dist/flatpickr.min.css',
     'node_modules/flatpickr/dist/plugins/confirmDate/confirmDate.css',
     'node_modules/flatpickr/dist/plugins/confirmDate/confirmDate.js',
+    'src/lib/template.min.js',
+    'src/lib/umeditor.config.js',
+    'src/lib/umeditor.min.js',
+    'src/lib/umeditor.min.css',
+    'src/lib/select2.min.css',
   ]).pipe(gulp.dest('dist/lib'))
+
+  gulp.src([
+    'node_modules/ueditor/example/public/ueditor/lang/zh-cn/zh-cn.js' 
+  ]).pipe(gulp.dest('dist/lang/zh-cn'))
+
+  gulp.src([
+    'src/lib/lang/zh-cn/zh-cn.js'
+  ]).pipe(gulp.dest('dist/lib/lang'))
+
+
+  gulp.src([
+    'src/lib/dialogs/**'
+  ]).pipe(gulp.dest('dist/lib/dialogs'))
+
+  gulp.src([
+    'src/lib/images/**'
+  ]).pipe(gulp.dest('dist/images'))
+
 
   gulp.src([
     'node_modules/flatpickr/dist/l10n/zh.js'

@@ -1,0 +1,59 @@
+extends basic.pug
+
+append vars
+  - var title = "用户列表"
+
+append style
+  link(rel="stylesheet", href="style/用户管理.css")
+
+append script
+  script(src="script/用户管理.js")
+
+block content
+    .m-subcont.list
+      +u-table(title)
+      +upagnum()
+    .m-subcont.distrib
+      .dir 当前位置：#{title} > #{subtitle}
+      .consult
+        form 
+          ul.userInfo
+            li
+              label 姓名：
+              input(type="text",placeholder="请输入用户名",name="uname")
+              label.prompt 姓名不能为空
+            li
+              label 登录账号：
+              input(type="text",placeholder="请输入登录账号",name="uaccout")
+              label.prompt 账号不能为空
+            li
+              label 邮箱：
+              input(type="text",placeholder="请输入邮箱",name="umail")
+              label.prompt 邮箱格式不对
+            li
+              label 手机：
+              input(type="text",placeholder="请输入手机号码",name="utel")
+              label.prompt 电话格式不对
+            li.typelist
+              label 用户角色：
+              label.btn
+                input(type="radio",name="user",checked)
+                span 分级领导
+              label.btn
+                input(type="radio",name="user")
+                span 安全保密管理员
+              label.btn
+                input(type="radio",name="user")
+                span 安全审计员
+              label.btn
+                input(type="radio",name="user")
+                span 审阅人
+              label.btn
+                input(type="radio",name="user")
+                span 情报分析员
+              label.btn
+                input(type="radio",name="user")
+                span 系统管理员
+            .saveBtn
+              button.save(type="button",onclick="check()") 保存
+              button.ret(type="button") 返回

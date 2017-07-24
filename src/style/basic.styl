@@ -12,6 +12,16 @@ body
   path
     fill white!important
 
+.selt
+  border 1px solid  #c8ced9
+  border-radius 3px
+  height 22px
+  vertical-align bottom
+  outline none
+  font-size 12px
+  padding 0 5px
+  color #696969
+
 .m-dropdown
   position relative
   >.list
@@ -28,7 +38,7 @@ body
     right 0
     box-shadow 0 8px 14px rgba(0,0,0,.08)
     border-radius 4px
-    z-index 100
+    z-index 10000
     >.item
       cursor pointer
       &.active
@@ -278,8 +288,48 @@ body
         margin-left 15px
         vertical-align bottom
         cursor pointer
+        border 1px solid #c8ced9
+        border-radius 2px
+        padding 0 5px
         &:hover
           color #4188d8
+      .yp
+        position relative
+        font-size 12px
+        ul 
+          list-style none
+          margin 0
+          padding 0
+          display none
+          position absolute
+          top 24px
+          background #ffffff
+          width 58px
+          left -1px
+          text-align center
+          border 1px solid #c8ced9
+          li
+            line-height 22px
+            border-bottom 1px solid #c8ced9
+            &:hover
+              background #E5E5E5
+      .yp:hover
+        color #696969
+        cursor Auto
+        ul
+          display block
+          cursor pointer
+
+      .select
+        width: 80px
+        height 24px
+        display inline-block
+        vertical-align bottom
+        margin-left 15px
+        border 1px solid #c8ced9
+        border-radius 3px
+        outline none
+        font-size 12px
     >.right
       float right
       >div
@@ -305,6 +355,9 @@ body
           vertical-align 2px
         >.list
           top 28px
+        .selt
+          border-color #4188d8
+          color #4188d8
   >.borderb
     border-bottom none
     >.approval
@@ -332,6 +385,7 @@ body
           background #c1c3c4
           vertical-align middle
           display inline-block
+          margin 0
         >.btn
           width 80px
           height 24px
@@ -342,6 +396,7 @@ body
           cursor pointer
           color #ffffff
           margin-left 12px
+          border none
   >.body
     >div
     >input
@@ -364,6 +419,7 @@ body
       width 20px
       background #c1c3c4
       vertical-align middle
+      margin 0
     >.btn
       width 80px
       height 24px
@@ -374,6 +430,7 @@ body
       cursor pointer
       color #ffffff
       margin-left 12px
+      border none
     >.btns
       float right
       border-radius 3px
@@ -573,6 +630,16 @@ body
         &.success
           background #4188d8
           color #fff 
+.bombmessage
+  text-align center
+  .ico
+    width 55px
+    height 55px
+    display inline-block
+    background url(../image/info.png) no-repeat center
+    background-size contain
+    margin-top 63px
+    margin-bottom 25px
 .mrt90
   margin-top 90px
 //密码修改弹框
@@ -668,7 +735,75 @@ body
           margin-right 18px
         &.success
           background #4188d8
-          color #fff 
+          color #fff
+//导入弹框
+.dh-panel
+  position fixed
+  left 0
+  right 0
+  top 0
+  bottom 0
+  background rgba(0,0,0,0.2)
+  z-index 1112
+  display none
+  .contain
+    position absolute
+    width 420px
+    height 230px
+    left 50%
+    top 150px
+    margin-left -150px
+    z-index 1113
+    background #ffffff
+    border-radius 4px
+    .head
+      position relative
+      height 50px
+      line-height 50px
+      border-bottom 1px solid #c1c3c4
+      padding 0 10px
+      color #323131
+      i.close
+        cursor pointer
+        position absolute
+        top 0px
+        right 10px
+        font-size 22px
+        font-style normal
+    .body
+      height 130px
+      border-bottom 1px solid #c1c3c4
+      input
+        margin-top 15px
+        margin-left 15px
+        display block
+      input:nth-child(2)
+        width 120px
+        height 36px
+        line-height 36px
+        box-sizing border-box
+        outline none
+        border none
+        background #4188d8
+        color #ffffff
+        margin-left 140px
+        margin-top 25px
+        display inline-block
+        cursor pointer
+      a
+        font-size 12px
+        text-decoration none
+        color #4188d8
+        margin-left 5px
+    .footer
+      p
+        text-align center
+        color #dcdcdc
+        font-size 12px
+        line-height 30px
+        margin 0
+        
+
 .login
   width 1294px
   height 744px
@@ -764,6 +899,7 @@ body
   height 22px
   line-height 22px
   margin-bottom 15px
+  transition height 1s
   label
     font-weight bold
     color #696969
@@ -773,20 +909,38 @@ body
     margin 0
     padding 0
     width 800px
-    overflow hidden
-    vertical-align middle
+    vertical-align top
     height 24px
-    white-space nowrap
-    text-overflow: ellipsis
     padding-left 5px
+    transition height 1s
+    overflow hidden
+    text-overflow ellipsis
+    white-space nowrap
+  p.zt.active
+    height 44px
+    white-space normal
   a
     text-decoration none
     color #696969
     padding-left 15px
     padding-right 10px
     background: url(../image/Arrow.png) no-repeat right
+.zt-info.active
+  height 40px
 .borderb
   border-bottom none
-
-
-  
+.edui-container
+  display inline-block
+  vertical-align top
+.edui-dialog-container
+  ul
+    li
+      font-size 12px !important
+      margin-bottom 0 !important
+.select2-container--default .select2-selection--single
+  height 36px !important
+  line-height 36px !important
+.select2-container--default .select2-selection--single .select2-selection__rendered
+  line-height 36px !important
+.select2-container--default .select2-selection--single .select2-selection__arrow
+  top 5px !important
